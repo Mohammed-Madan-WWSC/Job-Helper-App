@@ -1,0 +1,109 @@
+@import "tailwindcss";
+body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+}
+
+/* COMPLETELY REMOVE ALL FOCUS OUTLINES AND ORANGE COLORS FROM SLIDERS */
+input[type="range"] {
+  -webkit-appearance: none !important;
+  appearance: none !important;
+  outline: none !important;
+  border: none !important;
+  box-shadow: none !important;
+  background: transparent !important;
+}
+
+input[type="range"]:focus,
+input[type="range"]:focus-visible,
+input[type="range"]:active {
+  outline: none !important;
+  box-shadow: none !important;
+  border: none !important;
+  --tw-ring-offset-shadow: none !important;
+  --tw-ring-shadow: none !important;
+}
+
+/* WEBKIT SLIDER THUMB - NEUTRAL GRAY ONLY */
+input[type="range"]::-webkit-slider-thumb {
+  -webkit-appearance: none !important;
+  appearance: none !important;
+  width: 18px !important;
+  height: 18px !important;
+  background: #6b7280 !important;
+  border: 2px solid white !important;
+  border-radius: 50% !important;
+  box-shadow: 0 0 3px rgba(0, 0, 0, 0.3) !important;
+  cursor: pointer !important;
+  outline: none !important;
+  margin-top: -7px !important;
+}
+
+input[type="range"]::-webkit-slider-thumb:focus,
+input[type="range"]::-webkit-slider-thumb:focus-visible,
+input[type="range"]::-webkit-slider-thumb:active {
+  outline: none !important;
+  box-shadow: 0 0 3px rgba(0, 0, 0, 0.3) !important;
+  border: 2px solid white !important;
+  background: #6b7280 !important;
+}
+
+input[type="range"]::-webkit-slider-thumb:hover {
+  background: #4b5563 !important;
+}
+
+/* WEBKIT SLIDER TRACK */
+input[type="range"]::-webkit-slider-runnable-track {
+  height: 6px !important;
+  border-radius: 9999px !important;
+  background: #d1d5db !important;
+}
+
+/* MOZILLA SLIDER THUMB - NEUTRAL GRAY ONLY */
+input[type="range"]::-moz-range-thumb {
+  width: 18px !important;
+  height: 18px !important;
+  background: #6b7280 !important;
+  border: 2px solid white !important;
+  border-radius: 50% !important;
+  box-shadow: 0 0 3px rgba(0, 0, 0, 0.3) !important;
+  cursor: pointer !important;
+  outline: none !important;
+}
+
+input[type="range"]::-moz-range-thumb:focus,
+input[type="range"]::-moz-range-thumb:focus-visible,
+input[type="range"]::-moz-range-thumb:active {
+  outline: none !important;
+  box-shadow: 0 0 3px rgba(0, 0, 0, 0.3) !important;
+  border: 2px solid white !important;
+  background: #6b7280 !important;
+}
+
+input[type="range"]::-moz-range-thumb:hover {
+  background: #4b5563 !important;
+}
+
+/* MOZILLA SLIDER TRACK */
+input[type="range"]::-moz-range-track {
+  height: 6px !important;
+  border-radius: 9999px !important;
+  background: #d1d5db !important;
+}
+
+/* REMOVE ALL FOCUS STYLING GLOBALLY IF NEEDED */
+*:focus {
+  outline: none !important;
+}
+
+/* OVERRIDE ANY TAILWIND FOCUS UTILITIES */
+.focus\:ring-orange-500:focus,
+.focus\:border-orange-500:focus,
+.focus\:ring-2:focus {
+  --tw-ring-offset-shadow: none !important;
+  --tw-ring-shadow: none !important;
+  box-shadow: none !important;
+  border-color: inherit !important;
+}
