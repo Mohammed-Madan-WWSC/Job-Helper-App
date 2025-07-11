@@ -164,7 +164,7 @@ className={`relative border rounded-lg p-4 cursor-pointer transition-all duratio
 }`}
                 >
 {isSel && (
-                    <div className="absolute top-2 right-2 w-8 h-8 bg-orange-600 text-white rounded-full flex items-center justify-center font-bold text-sm">
+                    <div className="absolute top-2 right-2 w-8 h-8 bg-orange-400 text-white rounded-full flex items-center justify-center font-bold text-sm">
 {selNum}
                     </div>
 )}
@@ -192,7 +192,7 @@ className="flex items-center gap-1 sm:gap-2 bg-gray-100 text-gray-700 px-3 sm:px
 {canCont && (
               <button
 onClick={hdlCont}
-                className="bg-gradient-to-r from-orange-600 to-red-700 text-white px-3 sm:px-6 py-2.5 sm:py-3 rounded-xl hover:from-orange-700 hover:to-red-800 transition-all duration-200 text-sm sm:text-base font-medium shadow-lg hover:shadow-xl transform hover:scale-105 min-w-[80px] sm:min-w-[100px] justify-center"
+                className="bg-gradient-to-r from-orange-400 to-red-500 text-white px-3 sm:px-6 py-2.5 sm:py-3 rounded-xl hover:from-orange-500 hover:to-red-600 transition-all duration-200 text-sm sm:text-base font-medium shadow-lg hover:shadow-xl transform hover:scale-105 min-w-[80px] sm:min-w-[100px] justify-center"
 >
                 Continue
 </button>

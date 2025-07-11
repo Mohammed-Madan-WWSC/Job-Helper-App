@@ -42,12 +42,12 @@ return (
     <div className="space-y-6">
 {atwo.length > 0 && (
         <div>
-<h2 className="text-xl font-semibold mb-4 text-orange-700">Areas to Work On:</h2>
+        <h2 className="text-xl font-semibold mb-4 text-orange-500">Areas to Work On:</h2>
           <div className="flex flex-wrap gap-2">
 {atwo.map((area, idx) => (
               <span
 key={idx}
-                className="bg-orange-100 text-orange-800 px-3 py-1 rounded-full text-sm font-medium"
+                                  className="bg-orange-100 text-orange-600 px-3 py-1 rounded-full text-sm font-medium"
 >
                 {CRITERIA_NAMES[area] || area.replace(/([A-Z])/g, ' $1').trim()}
 </span>
@@ -57,7 +57,7 @@ key={idx}
 )}
 
       <div>
-<h3 className="text-lg font-semibold text-orange-800 mb-4">
+            <h3 className="text-lg font-semibold text-orange-600 mb-4">
           Career Development Tips
 </h3>
         <div className="space-y-3">
@@ -67,7 +67,7 @@ key={idx}
               className={`border rounded-lg p-4 cursor-pointer transition-all duration-300 ${
                 sti === idx
 ? 'bg-orange-50 border-2 border-orange-300'
-                  : 'bg-gray-50 border border-gray-200 hover:bg-orange-25'
+                  : 'bg-gray-50 border border-gray-200 hover:bg-orange-50'
 }`}
               onClick={() => hdlTipClick(idx)}
 >
@@ -76,8 +76,8 @@ key={idx}
                 <button
 className={`w-6 h-6 rounded-full border-2 flex items-center justify-center transition-all duration-300 ${
                     sti === idx
-? 'bg-orange-500 border-orange-500'
-                      : 'border-gray-300 hover:border-orange-400'
+                  ? 'bg-orange-300 border-orange-300'
+                  : 'border-gray-300 hover:border-orange-300'
 }`}
                 >
 <span className={`text-sm font-bold ${
@@ -88,7 +88,7 @@ className={`w-6 h-6 rounded-full border-2 flex items-center justify-center trans
                 </button>
 </div>
               {sti === idx && (
-<div className="mt-3 pt-3 border-t border-orange-200">
+              <div className="mt-3 pt-3 border-t border-orange-100">
                   <p className="text-gray-700 text-sm leading-relaxed">
 {tip.content}
                   </p>
@@ -100,7 +100,7 @@ className={`w-6 h-6 rounded-full border-2 flex items-center justify-center trans
       </div>
 
 <div className="mt-8 p-4 bg-orange-50 rounded-lg">
-        <p className="text-orange-800 text-center">
+                    <p className="text-orange-600 text-center">
 💡 Remember: Career exploration is a journey, not a destination. Be patient with yourself and keep exploring!
         </p>
 </div>

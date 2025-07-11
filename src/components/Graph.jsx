@@ -10,9 +10,9 @@ const ce = Object.entries(assessmentData);
 const getBarCol = (val, idx) => {
     if (val === 0) return 'bg-gray-200';
 const intens = val / 100;
-    if (intens > 0.7) return 'bg-orange-600';
-if (intens > 0.4) return 'bg-orange-500';
-    return 'bg-orange-400';
+        if (intens > 0.7) return 'bg-orange-400';
+    if (intens > 0.4) return 'bg-orange-300';
+    return 'bg-orange-200';
 };
 
   const getBarW = (val) => {
@@ -29,7 +29,7 @@ logo={logo}
       
 <main className="max-w-4xl mx-auto px-4 py-8">
         <div className="bg-white rounded-2xl shadow-lg p-6 backdrop-blur-sm border border-orange-100">
-<h2 className="text-2xl font-bold text-orange-800 mb-6 text-center">
+            <h2 className="text-2xl font-bold text-orange-600 mb-6 text-center">
             Assessment Data Visualization
 </h2>
           
@@ -42,10 +42,10 @@ className={`p-4 rounded-lg border transition-all duration-300 hover:shadow-md ${
 }`}
               >
 <div className="flex justify-between items-center mb-2">
-                  <h3 className="font-semibold text-orange-800">
+                  <h3 className="font-semibold text-orange-600">
 {CRITERIA_NAMES[k] || k}
                   </h3>
-<span className="text-orange-700 font-bold">
+                  <span className="text-orange-500 font-bold">
                     {val}%
 </span>
                 </div>

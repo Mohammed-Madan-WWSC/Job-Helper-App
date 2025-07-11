@@ -140,24 +140,25 @@ className={`w-full mb-6 px-4 box-border transform transition-all duration-700 ${
           <div>
             <h3 className="text-lg font-bold text-orange-700 mb-4 group-hover:text-orange-800 transition-colors text-center italic">
               {criterion.name}
+              {criterion.name === "Where will you live?" && <br />}
             </h3>
           </div>
 
 <div className="space-y-3 mt-auto">
-            <div className="space-y-2">
-{LOCATION_OPTIONS.map((opt, idx) => (
+                        <div className="space-y-2">
+              {LOCATION_OPTIONS.map((opt, idx) => (
                 <button
-key={idx}
+                  key={idx}
                   onClick={() => hdlLocSel(opt.value)}
-className={`w-full p-4 rounded-lg border-2 transition-all duration-200 text-left font-medium text-base ${
+                  className={`w-full p-4 rounded-lg border-2 transition-all duration-200 text-left font-medium text-base ${
                     value === opt.value
-? 'bg-yellow-300 border-yellow-500 text-black'
-                      : 'bg-yellow-100 border-yellow-200 text-gray-700 hover:bg-yellow-200'
-}`}
+                      ? 'bg-orange-300 border-orange-500 text-black'
+                      : 'bg-orange-100 border-orange-200 text-gray-700 hover:bg-orange-200'
+                  }`}
                 >
-{opt.label}
+                  {opt.label}
                 </button>
-))}
+              ))}
             </div>
 </div>
         </div>
@@ -175,12 +176,14 @@ className={`w-full p-4 rounded-lg border-2 transition-all duration-200 text-left
         className={`p-6 rounded-2xl shadow-xl border-2 bg-gradient-to-br ${CC} backdrop-blur-sm transition-all duration-500 hover:shadow-2xl hover:scale-[1.02] group
                     flex flex-col justify-between h-[360px]`}
 >
-        <div>
+                <div>
           <h3 className="text-lg font-bold text-orange-700 mb-2 group-hover:text-orange-800 transition-colors text-center italic">
             {criterion.name}
+            {(criterion.name === "Do you prefer working Indoors OR Outdoors?" || 
+              criterion.name === "Where will you live?") && <br />}
           </h3>
           <p className="text-gray-600 text-base leading-relaxed">{criterion.description}</p>
-</div>
+        </div>
 
         <div className="space-y-3 flex-1 flex flex-col">
 <div className="flex items-center justify-center h-[65px]">
