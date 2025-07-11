@@ -177,7 +177,7 @@ className={`w-full mb-6 px-4 box-border transform transition-all duration-700 ${
                     flex flex-col justify-between h-[360px]`}
 >
                 <div>
-          <h3 className="text-lg font-bold text-orange-700 mb-2 group-hover:text-orange-800 transition-colors text-center italic">
+          <h3 className="text-lg font-bold text-orange-700 mb-4 group-hover:text-orange-800 transition-colors text-center italic">
             {criterion.name}
             {(criterion.name === "Do you prefer working Indoors OR Outdoors?" || 
               criterion.name === "Where will you live?") && <br />}
