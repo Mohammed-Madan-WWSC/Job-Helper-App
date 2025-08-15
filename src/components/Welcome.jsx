@@ -5,7 +5,9 @@ import logo from '../logo.png';
 const W = ({ onStart }) => {
     const [ci, setCi] = useState({
 name: '',
-caseworkerName: ''
+caseworkerName: '',
+age: '',
+gender: ''
   });
 
 const hdlSub = (e) => {
@@ -46,6 +48,37 @@ onChange={(e) => setCi(prev => ({ ...prev, name: e.target.value }))}
                     className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-orange-500 focus:border-orange-500"
                     required
                   />
+                </div>
+                
+                <div>
+                  <label htmlFor="age" className="block text-sm font-medium text-gray-700 mb-1">
+                    Child's Age
+                  </label>
+                  <input
+                    type="number"
+                    id="age"
+                    value={ci.age}
+                    onChange={(e) => setCi(prev => ({ ...prev, age: e.target.value }))}
+                    className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-orange-500 focus:border-orange-500"
+                    required
+                  />
+                </div>
+                
+                <div>
+                  <label htmlFor="gender" className="block text-sm font-medium text-gray-700 mb-1">
+                    Child's Gender
+                  </label>
+                  <select
+                    id="gender"
+                    value={ci.gender}
+                    onChange={(e) => setCi(prev => ({ ...prev, gender: e.target.value }))}
+                    className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-orange-500 focus:border-orange-500"
+                    required
+                  >
+                    <option value="">Select gender</option>
+                    <option value="male">Male</option>
+                    <option value="female">Female</option>
+                  </select>
                 </div>
               </div>
 

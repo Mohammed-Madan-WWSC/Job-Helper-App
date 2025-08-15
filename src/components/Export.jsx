@@ -14,9 +14,9 @@ title="Final Results"
 <main className="max-w-2xl mx-auto px-4 py-8 pb-24">
         <div className="bg-white rounded-2xl shadow-lg p-8">
 <div className="text-center mb-8">
-            <h1 className="text-3xl font-bold text-blue-600 mb-4">Well done!</h1>
+            <h1 className="text-3xl font-bold text-orange-600 mb-4">Well done!</h1>
 <p className="text-gray-700 text-lg leading-relaxed">
-              We have more coming, but for now, these are your top interest areas:
+              Based on all your inputs, here are your Job Ideas:
 </p>
 
           </div>
@@ -49,9 +49,9 @@ className="flex items-center gap-1 sm:gap-2 bg-gray-100 text-gray-700 px-3 sm:px
           <div className="flex gap-2">
 <button
               onClick={onChatGPT}
-className="bg-gradient-to-r from-blue-600 to-blue-700 text-white px-3 sm:px-6 py-2.5 sm:py-3 rounded-xl hover:from-blue-700 hover:to-blue-800 transition-all duration-200 text-sm sm:text-base font-medium shadow-lg hover:shadow-xl transform hover:scale-105 min-w-[80px] sm:min-w-[100px] justify-center"
+className="bg-gradient-to-r from-orange-600 to-orange-700 text-white px-3 sm:px-6 py-2.5 sm:py-3 rounded-xl hover:from-orange-700 hover:to-orange-800 transition-all duration-200 text-sm sm:text-base font-medium shadow-lg hover:shadow-xl transform hover:scale-105 min-w-[80px] sm:min-w-[100px] justify-center"
 >
-              ChatGPT
+              More Ideas
 </button>
           </div>
 </div>

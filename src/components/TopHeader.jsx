@@ -1,7 +1,7 @@
 import React from 'react';
 
 const TP = ({ logo, title }) => (
-    <header className="bg-orange-500 text-white min-h-[4rem] sm:h-16 px-3 flex flex-col sm:flex-row items-center justify-center sm:justify-start shadow-sm relative py-2 sm:py-0">
+    <header className="bg-orange-600 text-white min-h-[4rem] sm:h-16 px-3 flex flex-col sm:flex-row items-center justify-center sm:justify-start shadow-sm relative py-2 sm:py-0">
     <img
 src={logo}
       alt="Logo"

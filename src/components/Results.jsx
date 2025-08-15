@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { ChevronLeft } from 'lucide-react';
 import TP from './TopHeader';
 import T from './Table';
@@ -30,11 +30,11 @@ default:
   }
 };
 
-const R = ({ calculationResults, onBack, onShowData, onContinue, subjectInfo, assessmentData }) => {
+const R = ({ calculationResults, onBack, onShowData, onContinue, subjectInfo, assessmentData, selectedJobs, setSelectedJobs }) => {
 const { results, outcomeCategory, percentageScore } = calculationResults;
-  const [sj, setSj] = useState([]);
   
 const ja = getJobRecAnalysis(assessmentData);
+
 
   const getOutMsg = (cat, score) => {
 if (cat === 'EXCELLENT') {
@@ -105,27 +105,27 @@ if (pct >= 60) return '✨';
 };
 
   const hdlJobSel = (ji, job) => {
-if (sj.find(sel => sel.index === ji)) {
-      setSj(sj.filter(sel => sel.index !== ji));
-} else if (sj.length < 3) {
-      setSj([...sj, { index: ji, job }]);
+if (selectedJobs.find(sel => sel.index === ji)) {
+      setSelectedJobs(selectedJobs.filter(sel => sel.index !== ji));
+} else if (selectedJobs.length < 3) {
+      setSelectedJobs([...selectedJobs, { index: ji, job }]);
 }
   };
 
 const isJobSel = (ji) => {
-    return sj.find(sel => sel.index === ji);
+    return selectedJobs.find(sel => sel.index === ji);
 };
 
   const getSelNum = (ji) => {
-const sel = sj.find(sel => sel.index === ji);
-    return sel ? sj.indexOf(sel) + 1 : null;
+const sel = selectedJobs.find(sel => sel.index === ji);
+    return sel ? selectedJobs.indexOf(sel) + 1 : null;
 };
 
-  const canCont = sj.length === 3;
+  const canCont = selectedJobs.length === 3;
 
 const hdlCont = () => {
     if (canCont) {
-onContinue(sj);
+onContinue(selectedJobs);
     }
 };
 
@@ -139,7 +139,7 @@ logo={logo}
       <main className="max-w-2xl mx-auto px-4 py-8 pb-24">
 <div className="bg-white rounded-2xl shadow-lg p-8">
           <div className="text-center mb-8">
-<h1 className="text-3xl font-bold text-blue-600 mb-4">SELECT TOP 3</h1>
+<h1 className="text-3xl font-bold text-orange-600 mb-4">SELECT TOP 3</h1>
             <p className="text-gray-700 text-lg leading-relaxed">
 Now select the three options that you like the most <strong>AND</strong> that you believe you could be good at <strong>AND</strong> that are most feasible in your intended living environment...
             </p>
@@ -158,14 +158,14 @@ key={idx}
 className={`relative border rounded-lg p-4 cursor-pointer transition-all duration-200 hover:shadow-md ${
                     isSel 
 ? 'bg-orange-200 border-orange-400 shadow-md' 
-                      : sj.length >= 3 
+                      : selectedJobs.length >= 3 
 ? 'bg-gray-100 border-gray-200 cursor-not-allowed opacity-60'
                         : 'bg-orange-100 hover:bg-orange-200 border-orange-200'
 }`}
                 >
 {isSel && (
                     <div className="absolute top-2 right-2 w-8 h-8 bg-orange-400 text-white rounded-full flex items-center justify-center font-bold text-sm">
-{selNum}
+✓
                     </div>
 )}
                   <h3 className="text-gray-800 font-medium text-center pr-10">

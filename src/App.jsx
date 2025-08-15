@@ -1,9 +1,10 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import W from './components/Welcome';
 import S from './components/Survey';
 import R from './components/Results';
 import E from './components/Export';
 import G from './components/Graph';
+import ChatGPTRecommendations from './components/ChatGPTRecommendations';
 import { calcRes } from './utils/c';
 import { INITIAL_DATA, SCREEN_CONFIG } from './utils/d';
 
@@ -11,11 +12,20 @@ const App = () => {
 const [sr, setSr] = useState(false);
   const [sfr, setSfr] = useState(false);
 const [sdv, setSdv] = useState(false);
+  const [scgpt, setScgpt] = useState(false);
   const [ad, setAd] = useState(INITIAL_DATA);
 const [cr, setCr] = useState(null);
   const [sj, setSj] = useState([]);
+  const [prevAd, setPrevAd] = useState(null);
 const [cs, setCs] = useState(0);
   const [si, setSi] = useState(null);
+
+  useEffect(() => {
+    if (prevAd !== null && JSON.stringify(prevAd) !== JSON.stringify(ad)) {
+      setSj([]);
+    }
+    setPrevAd(ad);
+  }, [ad]);
 
 const hdlStart = (info) => {
     setSi(info);
@@ -37,6 +47,7 @@ setSfr(true);
 setSfr(false);
     setSr(true);
 setSdv(false);
+    setScgpt(false);
   };
 
 const hdlBTA = () => {
@@ -46,6 +57,7 @@ const hdlBTA = () => {
 setSr(false);
     setSfr(false);
 setSdv(false);
+    setScgpt(false);
   };
 
   const hdlSDV = () => {
@@ -54,15 +66,33 @@ setSdv(true);
 
 const hdlBTRFC = () => {
     setSdv(false);
+    setScgpt(false);
 };
 
   const hdlChatGPT = () => {
-console.log('ChatGPT functionality - selected jobs:', sj);
+    setScgpt(true);
+    setSfr(false);
+  };
+
+  const hdlBackFromChatGPT = () => {
+    setScgpt(false);
+    setSfr(true);
   };
 
 if (!si) {
     return <W onStart={hdlStart} />;
 }
+
+  if (scgpt) {
+    return (
+      <ChatGPTRecommendations
+        selectedJobs={sj}
+        onBack={hdlBackFromChatGPT}
+        subjectInfo={si}
+        assessmentData={ad}
+      />
+    );
+  }
 
   if (sdv) {
 return (
@@ -92,6 +122,8 @@ onShowData={hdlSDV}
         onContinue={hdlSFR}
 subjectInfo={si}
         assessmentData={ad}
+        selectedJobs={sj}
+        setSelectedJobs={setSj}
 />
     );
 }

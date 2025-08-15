@@ -137,10 +137,9 @@ className={`w-full mb-6 px-4 box-border transform transition-all duration-700 ${
           className={`p-6 rounded-2xl shadow-xl border-2 bg-gradient-to-br ${CC} backdrop-blur-sm transition-all duration-500 hover:shadow-2xl hover:scale-[1.02] group
                       flex flex-col justify-between h-[360px]`}
 >
-          <div>
-            <h3 className="text-lg font-bold text-orange-700 mb-4 group-hover:text-orange-800 transition-colors text-center italic">
+          <div className="h-[80px] flex items-center justify-center">
+            <h3 className="text-lg font-bold text-orange-700 group-hover:text-orange-800 transition-colors text-center italic leading-tight">
               {criterion.name}
-              {criterion.name === "Where will you live?" && <br />}
             </h3>
           </div>
 
@@ -176,13 +175,10 @@ className={`w-full mb-6 px-4 box-border transform transition-all duration-700 ${
         className={`p-6 rounded-2xl shadow-xl border-2 bg-gradient-to-br ${CC} backdrop-blur-sm transition-all duration-500 hover:shadow-2xl hover:scale-[1.02] group
                     flex flex-col justify-between h-[360px]`}
 >
-                <div>
-          <h3 className="text-lg font-bold text-orange-700 mb-4 group-hover:text-orange-800 transition-colors text-center italic">
+                <div className="h-[80px] flex items-center justify-center">
+          <h3 className="text-lg font-bold text-orange-700 group-hover:text-orange-800 transition-colors text-center italic leading-tight">
             {criterion.name}
-            {(criterion.name === "Do you prefer working Indoors OR Outdoors?" || 
-              criterion.name === "Where will you live?") && <br />}
           </h3>
-          <p className="text-gray-600 text-base leading-relaxed">{criterion.description}</p>
         </div>
 
         <div className="space-y-3 flex-1 flex flex-col">
